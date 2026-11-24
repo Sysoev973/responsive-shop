@@ -17,8 +17,9 @@
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">Исток</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню"><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span></button>
       <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+        <ul class="site-nav__list" id="site-nav">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="category.html">Engineering</a></li>
@@ -41,7 +42,7 @@
     </nav>
     <article class="product-page">
       <div class="product-page__media">
-        <img class="product-page__image" src="images/ai-engineering-400.jpg" srcset="images/ai-engineering-400.jpg 400w, images/ai-engineering-800.jpg 800w" sizes="(min-width: 900px) 45vw, 100vw" alt="Обложка сборника «AI Engineering: базовый сборник»" width="400" height="260">
+        <picture class="product-page__picture"><source type="image/avif" srcset="images/ai-engineering-400.avif 400w, images/ai-engineering-800.avif 800w" sizes="(min-width: 900px) 45vw, 100vw"><source type="image/webp" srcset="images/ai-engineering-400.webp 400w, images/ai-engineering-800.webp 800w" sizes="(min-width: 900px) 45vw, 100vw"><img class="product-page__image" src="images/ai-engineering-400.jpg" srcset="images/ai-engineering-400.jpg 400w, images/ai-engineering-800.jpg 800w" sizes="(min-width: 900px) 45vw, 100vw" alt="Обложка сборника «AI Engineering: базовый сборник»" width="400" height="260"></picture>
       </div>
       <div class="product-page__info">
         <p class="badge badge--hit">Хит</p>
@@ -74,7 +75,7 @@
     <section class="section" id="specs">
       <h2 class="section__title">Характеристики</h2>
       <div class="table-wrap">
-        <table class="spec-table">
+        <table class="spec-table spec-table--cards">
           <caption class="spec-table__caption">Характеристики сборника</caption>
           <thead><tr class="spec-table__row"><th class="spec-table__head-cell" scope="col">Параметр</th><th class="spec-table__head-cell" scope="col">Значение</th></tr></thead>
           <tbody>
@@ -92,13 +93,13 @@
     <section class="section" id="delivery">
       <h2 class="section__title">Способы получения</h2>
       <div class="table-wrap">
-        <table class="spec-table">
+        <table class="spec-table spec-table--cards">
           <caption class="spec-table__caption">Условия получения сборника</caption>
           <thead><tr class="spec-table__row"><th class="spec-table__head-cell" scope="col">Способ</th><th class="spec-table__head-cell" scope="col">Срок</th><th class="spec-table__head-cell" scope="col">Цена</th></tr></thead>
           <tbody>
-            <tr class="spec-table__row"><th class="spec-table__row-head" scope="row">Электронная выдача на e-mail</th><td class="spec-table__cell">сразу</td><td class="spec-table__cell">0 ₽</td></tr>
-            <tr class="spec-table__row"><th class="spec-table__row-head" scope="row">Печатная версия</th><td class="spec-table__cell">3–5 дней</td><td class="spec-table__cell">700 ₽</td></tr>
-            <tr class="spec-table__row"><th class="spec-table__row-head" scope="row">Подарочное оформление</th><td class="spec-table__cell">5–7 дней</td><td class="spec-table__cell">900 ₽</td></tr>
+            <tr class="spec-table__row"><th class="spec-table__row-head" scope="row">Электронная выдача на e-mail</th><td class="spec-table__cell" data-label="Срок">сразу</td><td class="spec-table__cell" data-label="Цена">0 ₽</td></tr>
+            <tr class="spec-table__row"><th class="spec-table__row-head" scope="row">Печатная версия</th><td class="spec-table__cell" data-label="Срок">3–5 дней</td><td class="spec-table__cell" data-label="Цена">700 ₽</td></tr>
+            <tr class="spec-table__row"><th class="spec-table__row-head" scope="row">Подарочное оформление</th><td class="spec-table__cell" data-label="Срок">5–7 дней</td><td class="spec-table__cell" data-label="Цена">900 ₽</td></tr>
           </tbody>
         </table>
       </div>

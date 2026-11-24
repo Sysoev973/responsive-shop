@@ -1,6 +1,35 @@
-// Логика модального окна быстрой заявки и доступная валидация форм.
+// Логика мобильной навигации (бургер-меню), модального окна быстрой заявки
+// и доступной валидации форм.
 // Сообщения об ошибках выводятся в элементы с role="alert", связанные с полями
 // через aria-describedby; состояние поля отмечается aria-invalid.
+
+// --- Бургер-меню (без JS меню остаётся открытым) ---
+const siteHeader = document.querySelector('.site-header');
+const navToggle = document.querySelector('.nav-toggle');
+const siteNav = document.querySelector('.site-nav');
+
+if (siteHeader && navToggle && siteNav) {
+  siteHeader.classList.add('site-header--js');
+
+  const setMenu = (open) => {
+    siteNav.classList.toggle('site-nav--open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  };
+
+  navToggle.addEventListener('click', () => {
+    setMenu(!siteNav.classList.contains('site-nav--open'));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenu(false);
+  });
+
+  siteNav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setMenu(false);
+  });
+}
+
 const successMessage = document.getElementById('success-message');
 
 // Показать/скрыть ошибку поля
