@@ -1,0 +1,70 @@
+/* ===== Адаптивная вёрстка (КР №3, ПЗ №12) ===== */
+/* Подход Mobile First: базовые правила — для мобильных экранов,
+   расширение — через @media (min-width: ...).
+   Файл подключается после css/style.css на всех страницах. */
+
+/* Responsive images: базовое правило */
+img, video { max-width: 100%; height: auto; }
+
+/* --- Шапка и навигация: на мобильном меню в колонку --- */
+.site-header__inner { flex-direction: column; align-items: stretch; gap: var(--space-xs); }
+.site-header__logo { align-self: flex-start; }
+.site-nav { width: 100%; }
+.site-nav__list { flex-direction: column; align-items: stretch; gap: 0; border-top: 1px solid var(--color-border); }
+.site-nav__link { display: block; min-height: 44px; padding: 10px 2px; border-bottom: 1px solid var(--color-border); }
+.site-nav__link--active { border-bottom-color: var(--color-accent); }
+
+/* --- Hero: одна колонка, заголовок через clamp() --- */
+.hero { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); align-items: center; }
+.hero__title { font-size: clamp(28px, 6vw + 8px, 44px); }
+.hero__picture { display: block; }
+.hero__image { width: 100%; border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+
+/* --- Сетка карточек сборников: 1 колонка --- */
+.products-grid { grid-template-columns: 1fr; }
+
+/* --- Каталог: фильтры сверху, сетка товаров ниже --- */
+.catalog-layout { grid-template-columns: 1fr; grid-template-areas: "filters" "products"; }
+.catalog-filters { position: static; }
+
+/* --- Страница товара и двухколоночные макеты: одна колонка --- */
+.product-page, .two-col { grid-template-columns: 1fr; }
+
+/* --- Формы: одна колонка, поля удобны для касания (min-height 44px) --- */
+.order-form__grid { grid-template-columns: 1fr; }
+.order-form__input, .order-form__select, .catalog-filters__input { min-height: 44px; }
+.order-form__textarea { min-height: 88px; }
+.button { min-height: 44px; padding-top: 10px; padding-bottom: 10px; }
+.button--small { min-height: 0; }
+
+/* --- Таблицы: горизонтальная прокрутка на узких экранах (.table-wrap) --- */
+.table-wrap { -webkit-overflow-scrolling: touch; }
+
+/* ===== Планшет (≥ 640px): карточки и формы в 2 колонки ===== */
+@media (min-width: 640px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .order-form__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Планшет (≥ 700px): навигация в строку ===== */
+@media (min-width: 700px) {
+  .site-header__inner { flex-direction: row; align-items: center; }
+  .site-nav { width: auto; }
+  .site-nav__list { flex-direction: row; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: var(--space-xs) var(--space-md); border-top: 0; }
+  .site-nav__link { display: inline-block; min-height: 0; padding: var(--space-xs) 2px; border-bottom: 2px solid transparent; }
+  .site-nav__link--active { border-bottom-color: var(--color-accent); }
+}
+
+/* ===== Десктоп (≥ 900px): hero в две колонки, каталог с боковым фильтром ===== */
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.1fr 1fr; }
+  .catalog-layout { grid-template-columns: 260px 1fr; grid-template-areas: "filters products"; }
+  .catalog-filters { position: sticky; top: calc(var(--header-height) + var(--space-md)); }
+  .product-page { grid-template-columns: 1fr 1fr; }
+  .two-col { grid-template-columns: 2fr 1fr; }
+}
+
+/* ===== Десктоп (≥ 1024px): карточки в 3 колонки ===== */
+@media (min-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
+}

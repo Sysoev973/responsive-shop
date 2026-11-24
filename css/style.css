@@ -247,10 +247,6 @@ a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visib
 .to-top:hover { background: var(--color-accent); }
 .to-top:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 
-/* ===== Узкие экраны (минимум; полная адаптивность — в КР №3) ===== */
-@media (max-width: 800px) {
-  .catalog-layout { grid-template-columns: 1fr; grid-template-areas: "filters" "products"; }
-  .product-page, .two-col { grid-template-columns: 1fr; }
-  .catalog-filters { position: static; }
-  .hero__title { font-size: 32px; }
-}
+/* ===== Адаптивность ===== */
+/* Все адаптивные правила (Mobile First, @media min-width) вынесены в css/responsive.css,
+   который подключается после этого файла на всех страницах. */

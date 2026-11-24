@@ -9,6 +9,7 @@
   <meta property="og:title" content="Исток — магазин тематических сборников источников">
   <meta property="og:description" content="Исток: кураторские сборники книг, статей и исследований по инженерным темам.">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -40,6 +41,12 @@
           <a class="button button--light" href="category.html">Раздел Engineering</a>
         </div>
       </div>
+      <div class="hero__media">
+        <picture class="hero__picture">
+          <source type="image/webp" srcset="images/hero-600.webp 600w, images/hero-800.webp 800w, images/hero-1200.webp 1200w" sizes="(min-width: 900px) 45vw, 100vw">
+          <img class="hero__image" src="images/hero-800.jpg" srcset="images/hero-600.jpg 600w, images/hero-800.jpg 800w, images/hero-1200.jpg 1200w" sizes="(min-width: 900px) 45vw, 100vw" width="1200" height="800" alt="Обложка магазина Исток: кураторские сборники источников по инженерным темам" fetchpriority="high">
+        </picture>
+      </div>
     </section>
 
     <section class="section" id="advantages">
@@ -57,7 +64,7 @@
       <div class="products-grid">
         <article class="product-card product-card--featured">
           <span class="badge badge--hit product-card__badge">Хит</span>
-          <img class="product-card__image" src="images/ai-engineering.svg" alt="Обложка сборника «AI Engineering: базовый сборник»" width="400" height="260" loading="lazy">
+          <img class="product-card__image" src="images/ai-engineering-400.jpg" srcset="images/ai-engineering-400.jpg 400w, images/ai-engineering-800.jpg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" alt="Обложка сборника «AI Engineering: базовый сборник»" width="400" height="260" loading="lazy">
           <p class="product-card__category"><a class="product-card__category-link" href="category.html">Engineering → AI Engineering</a></p>
           <h3 class="product-card__title">AI Engineering: базовый сборник</h3>
           <p class="product-card__description">Введение в инженерию искусственного интеллекта: от нейросетей до этики ИИ.</p>
@@ -74,7 +81,7 @@
         </article>
         <article class="product-card">
           <span class="badge badge--new product-card__badge">Новинка</span>
-          <img class="product-card__image" src="images/web-development.svg" alt="Обложка сборника «Web Development: полный сборник»" width="400" height="260" loading="lazy">
+          <img class="product-card__image" src="images/web-development-400.jpg" srcset="images/web-development-400.jpg 400w, images/web-development-800.jpg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" alt="Обложка сборника «Web Development: полный сборник»" width="400" height="260" loading="lazy">
           <p class="product-card__category">Engineering → Web Development</p>
           <h3 class="product-card__title">Web Development: полный сборник</h3>
           <p class="product-card__description">Фронтенд и бэкенд с нуля: HTML, CSS, JavaScript и практика на проектах.</p>
@@ -91,7 +98,7 @@
         </article>
         <article class="product-card product-card--discount">
           <span class="badge badge--sale product-card__badge">Скидка</span>
-          <img class="product-card__image" src="images/system-design.svg" alt="Обложка сборника «Системный дизайн: сборник архитектора»" width="400" height="260" loading="lazy">
+          <img class="product-card__image" src="images/system-design-400.jpg" srcset="images/system-design-400.jpg 400w, images/system-design-800.jpg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" alt="Обложка сборника «Системный дизайн: сборник архитектора»" width="400" height="260" loading="lazy">
           <p class="product-card__category">Engineering → System Design</p>
           <h3 class="product-card__title">Системный дизайн: сборник архитектора</h3>
           <p class="product-card__description">Проектирование масштабируемых систем: от кэширования до шардирования.</p>
