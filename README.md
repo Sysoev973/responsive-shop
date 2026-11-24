@@ -12,7 +12,7 @@
 Первая витрина — раздел **Engineering → AI Engineering**; первый сборник построен на базе курса [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners).
 
 ## Как посмотреть проект
-Сборка и сервер не нужны: проект состоит из статических файлов. Клонируйте репозиторий и откройте `index.html` в браузере.
+https://sysoev973.github.io/responsive-shop/
 
 ## Структура проекта
 ```
