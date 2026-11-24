@@ -47,29 +47,33 @@
       </section>
       <section class="two-col__aside" aria-label="Обратная связь">
         <h2 class="section__title">Обратная связь</h2>
-        <form class="order-form order-form--page" action="#" method="post" id="fb-form">
+        <form class="order-form order-form--page" action="#" method="post" id="fb-form" novalidate>
         <div class="order-form__grid">
           <div class="order-form__field">
             <label class="order-form__label" for="fb-name">Имя</label>
-            <input class="order-form__input" id="fb-name" name="name" type="text" autocomplete="name" minlength="2" required>
+            <input class="order-form__input" id="fb-name" name="name" type="text" autocomplete="name" minlength="2" required aria-describedby="fb-name-error">
+            <small class="order-form__error" id="fb-name-error" role="alert" hidden>Введите имя (не короче 2 символов).</small>
           </div>
           <div class="order-form__field">
             <label class="order-form__label" for="fb-email">E-mail</label>
-            <input class="order-form__input" id="fb-email" name="email" type="email" autocomplete="email" required>
+            <input class="order-form__input" id="fb-email" name="email" type="email" autocomplete="email" required aria-describedby="fb-email-error">
+            <small class="order-form__error" id="fb-email-error" role="alert" hidden>Введите корректный e-mail.</small>
           </div>
           <div class="order-form__field">
             <label class="order-form__label" for="fb-phone">Телефон</label>
-            <input class="order-form__input" id="fb-phone" name="phone" type="tel" placeholder="+7 (900) 000-00-00" required>
+            <input class="order-form__input" id="fb-phone" name="phone" type="tel" placeholder="+7 (900) 000-00-00" required aria-describedby="fb-phone-error">
+            <small class="order-form__error" id="fb-phone-error" role="alert" hidden>Введите телефон.</small>
           </div>
           <div class="order-form__field">
             <label class="order-form__label" for="fb-topic">Тема / сборник</label>
-            <select class="order-form__select" id="fb-topic" name="topic" required>
+            <select class="order-form__select" id="fb-topic" name="topic" required aria-describedby="fb-topic-error">
           <option value="">Выберите сборник или тему</option>
           <option value="ai-engineering">AI Engineering: базовый сборник</option>
           <option value="generative-ai">Generative AI: сборник</option>
           <option value="ml-engineering">ML Engineering: практический сборник</option>
           <option value="consultation">Консультация</option>
             </select>
+            <small class="order-form__error" id="fb-topic-error" role="alert" hidden>Выберите сборник или тему.</small>
           </div>
         </div>
         <div class="order-form__field">
@@ -77,7 +81,8 @@
           <textarea class="order-form__textarea" id="fb-comment" name="comment" rows="4"></textarea>
         </div>
         <div class="order-form__field order-form__field--checkbox">
-          <label class="order-form__label order-form__label--inline"><input id="fb-agreement" name="agreement" type="checkbox" required> Я согласен на обработку персональных данных</label>
+          <label class="order-form__label order-form__label--inline"><input id="fb-agreement" name="agreement" type="checkbox" required aria-describedby="fb-agreement-error"> Я согласен на обработку персональных данных</label>
+          <small class="order-form__error" id="fb-agreement-error" role="alert" hidden>Подтвердите согласие на обработку данных.</small>
         </div>
         <div class="order-form__actions order-form__actions--start">
           <button class="button button--primary" type="submit">Отправить сообщение</button>
@@ -104,5 +109,6 @@
     </div>
   </footer>
   <a class="to-top" href="#main" aria-label="Наверх">↑</a>
+  <p class="success-message" id="success-message" role="status" hidden>Сообщение успешно отправлено!</p>
 </body>
 </html>
